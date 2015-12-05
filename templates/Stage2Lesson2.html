@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class = "lesson">
+    <h2>Stage 2.2: Variable and Strings</h2>
+    <div class = "concept">
+      <h3>What is a Variable?</h3>
+      <div class = "supporting-info">
+        A value that can vary.  It is convention to use lower case for variables, but not a rule.  Variables are useful for summarizing a value and can be used over and over to simplify our code.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Assigning a value to a variable:</h3>
+      <div class = "supporting-info">
+        The value given to the variable.  It can be a math problem like 1 + 1.<br>
+        Equals =  means assignment.  It is more like an arrow -->
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>What's the difference between what the equals sign = means in 2+3=5 and my_variable=5</h3>
+      <div class = "supporting-info">
+        In mathematics the equals sign means "the same as".<br>
+        In programming the equals sign means "takes the value of".
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>What are some ways variables are useful?</h3>
+      <div class = "supporting-info">
+        Variables are useful for summarizing a value and can be used over and over to simplify our code.  It also improves the readability of our code.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>What is the difference between 2 + 2 and "2" + "2"?</h3>
+      <div class = "supporting-info">
+        2 + 2 would print out as 4 in Python, whereas "2" + "2" would concatenate these two values as strings and print out 22.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Assignment Statement:</h3>
+      <div class = "supporting-info">
+        Name = Expression for example speed_of_light = 299792458
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Python</h3>
+      <div class = "supporting-info">
+        Comment Sign in Python is #
+      </div>
+      <div class = "supporting-info">
+        Strings in Python
+        <div class = "more-supporting-info">
+          'I'm a string' and "I'm a string".  Strings need to start and end with the same type of quote (single or double).
+        </div>
+      </div>
+      <div class = "supporting-info">
+        Plus in Python
+        <div class = "more-supporting-info">
+          This is used for concatenation. &lt;string&gt; + &lt;string&gt;.  You cannot concatenate a string and a number.  You can us * to multiple your string entries.
+        </div>
+      </div>
+      <div class = "supporting-info">
+        Indexing Strings
+        <div class = "more-supporting-info">
+          This is essentially a way to output a letter from a string by indicating which letter to output from the string.  For example:
+          <div class = "examples">
+            <p>&lt;string&gt; [&lt;expression&gt;]
+            <p>'udacity' [0]</p>
+            <p>0123456</p>
+            <p>name = udacity</p>
+            <p>print name [1]</P>
+            <p>d</p>
+            <p>print name [-1]</p>
+            <p>y</p>
+          </div>
+        </div>
+      </div>
+      <div class = "supporting-info">
+        Selecting Sub-Sequences
+        <div class = "more-supporting-info">
+          <ul>
+            <li>&lt;string&gt; [&lt;expression&gt;] --> one-character string, where the expression is a # like before.
+            <li>&lt;string&gt; [&lt; expression&gt; : &lt;expression&gt;] --> expressions are numbers and this will result in a subsequence of the characters. The 1st expression is the 1st letter. The 2nd expression is the Final Letter in the combined string.
+           </ul>
+        </div>
+      </div>
+      <div class = "supporting-info">
+        Method
+        <div class = "more-supporting-info">
+          A built in procedure used in Python, such as "Find".
+        </div>
+      </div>
+      <div class = "supporting-info">
+        How to Use Find
+        <div class = "more-supporting-info">
+          &lt;string&gt;.find(&lt;string&gt;)  --> number that gives first position in search string where the target string appears. If the target string is not found, the output will be -1. For Example:
+          <div class = "examples">
+            <p>pythagoras = 'There is a geometry in the mumming of the strings, there is music in the spacing of the spheres.'</P>
+            <p>print pythagoras.find('string')</p>
+            <p>40 is the result</p>
+          </div>
+        </div>
+      </div>
+      <div class = "supporting-info">
+        Parameter
+        <div class = "more-supporting-info">
+          <ul>
+            <li>Something that goes inside the parentheses. For example: "text".find("t",1)
+            <li>By adding the comma and # parameter to the find Method we get the ability to search from a defined starting point in a string.
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

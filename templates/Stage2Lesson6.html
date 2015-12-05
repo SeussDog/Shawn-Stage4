@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class = "lesson">
+    <h2>Stage 2.6 Structured Data: Lists and For Loops</h2>
+    <div class = "concept">
+      <h3>Look for the differences between strings and lists</h3>
+      <div class = "supporting-info">
+        <b>Stings</b> = sequence of characters
+        <div class = "more-supporting-info">
+          <pre><code>
+  s = 'yabba!'</code>
+  <code>s [0]</code> ---&gt; 'y'
+  <code>s [2:4]</code> ---&gt; 'bb'
+          </pre>
+        </div>
+        <b>Lists</b> = sequence of anything.  They are ordered.
+        <div class = "more-supporting-info">
+          <pre>
+
+  <code>p = ['y', a','b','b','a','!']</code>
+  <code>p [0]</code> ---&gt; 'y'
+  <code>p [2:4]</code> ----&gt; ['b','b']
+  <code>&lt;list&gt;</code> ---&gt; [&lt;Expression&gt;, &lt;Expression&gt;, ...]
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Mutation and Aliasing</h3>
+      <div class = "supporting-info">
+        <b>Strings</b> are immutable whereas <b>Lists</b> are mutable.
+      </div>
+      <div class = "supporting-info">
+        <b>Mutation:</b> You can't mutate a number, but you can mutate a list. Examples:
+        <div class = "more-supporting-info">
+          <pre>
+
+  <code>p = ['H','e','l','l','o']
+  print p = Hello
+  p[0] = 'Y'</code>   ****This changes a value of the list****
+  <code>print p = Yello
+  q = p
+  q [4] = '!'</code> ****This changed the value of q and p****
+          </pre>
+        </div>
+        <b>Aliasing</b> Two variables can share the same value.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>List Operations</h3>
+      <div class = "supporting-info">
+        <div class = "more-supporting-info">
+          <pre>
+
+  <code>&lt;list&gt;.append (&lt;element&gt;)</code>
+    Example
+      <code>stooges = ['Moe', 'Larry', 'Curly']
+      stooges.append ('Shemp')
+      print stooges
+      'Moe', 'Larry', 'Curly', 'Shemp'
+
+  &lt;list&gt; + &lt;list&gt;</code>
+    Example = [0,1] + [2,3] ----&gt; [0,1,2,3]
+
+  <code>len (&lt;list&gt;)
+    len ([0,1])</code> ---&gt; 2 for 2 elements
+    <code>len (['a',['b',['c']]])</code> ----&gt; 2 elements. It only counts the outer lists
+    <code>len ("Udacity")</code> ----&gt; 7 for the 7 characters
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Structured Data</h3>
+      <div class = "supporting-info">
+        This is data that is organized into defined fields withing DBs or in the case of Python a List.  The advantage of structured data is that it makes it easier for you to organize, query, filter and analyze the data.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Mutability</h3>
+      <div class = "supporting-info">
+        Numbers cannot be mutated, but lists can be.  You can add or change the list values using append.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>The Difference between Append and +</h3>
+      <div class = "supporting-info">
+        I believe that append mutates or changes a value to a list, but doesn't change the value of assignment.  Whereas + changes the value of the assignment when used.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Loops on Lists</h3>
+      <div class = "supporting-info">
+        <p class = "examples">while &lt;test&gt;:</p>
+        <p class = "example2">&lt;Block&gt;</p>
+        <p class = "examples">for &lt;name&gt; in &lt;list&gt;:</p>
+        <p class = "example2">&lt;Block&gt;   ***It looks like to me that the for command gives you the ability to output each value in a list.***</p>
+        <p class = "examples">Example 1:</p>
+        <div class = "more-supporting-info">
+          <pre>
+
+            <code>def sum_list(p):
+              result = 0
+              for e in p:
+                result = result + e
+              return result
+            print sum_list([1,4,7])</code>
+
+          </pre>
+        </div>
+        <p class = "examples">Example 2:</p>
+        <div class = "more-supporting-info">
+          <pre>
+
+            <code>def measure_udacity(U):
+              count = 0
+              for e in U:
+                if e[0] == "U":
+                  count = count + 1</code> &lt;— or you can write count += 1
+              <code>return count</code>
+          </pre>
+        </div>
+        <p class = "examples">Example 3: Find Element</p>
+        <div class = "more-supporting-info">
+          <pre>
+
+            <code>def find_elem  i = i + 1</code> &lt;lt--- This allows us to track and increase the index value.
+              <code>return -1</code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Index</h3>
+      <div class = "supporting-info">
+        <p class = "examples">&lt;list&gt;. index (&lt;value&gt;)</p>
+        <p class = "examples">if &lt;value&gt; is in the &lt;list&gt;, returns the first position where &lt;value&gt; is found in &lt;list&gt;. Otherwise it produces an error.</p>
+        <p class = "examples">Example:</p>
+        <div class = "more-supporting-info">
+          <pre>
+
+            <code>p = [0,1,2]
+            print p.index(2)</code> 
+          </pre>
+        </div>
+        <p class = "examples">This returns 2 and it only returns the first matching value.  If the value is in the list, it will return the value where it is first found. The problem is if the value is not in the list, it returns an error.</p>
+        <p class = "examples">Example 2:</p>
+        <div class = "more-supporting-info">
+          <pre>
+
+            <code>def find_element (p,t):
+              if t in p:
+                return p.index(t)
+              else:
+                return -1
+            print find_element([1,2,3],3)
+            #>>> 2
+            print find_element(['alpha','beta'],'gamma')
+            #>>> -1</code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>In</h3>
+      <div class = "supporting-info">
+        <p class = "examples">&lt;value&gt; in &lt;list&gt;</p>
+        <p class = "examples">Example:</p>
+        <div class = "more-supporting-info">
+          <pre>
+
+            <code>p = [0,1,2]
+            print 2 in p</code> &lt;---- This will return "True"
+            <code>print 3 in p</code> &lt;---- This will return "False"
+        </pre>
+        </div>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Not In</h3>
+      <div class = "supporting-info">
+        <p class = "examples">&lt;value&gt; not in &lt;list&gt;</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

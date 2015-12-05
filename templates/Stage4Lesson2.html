@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class = "lesson">
+		<h2>4.2 Make the Internet Work for You</h2>
+		<div class = "concept">
+      		<h3>URL: Uniform Resource Locator</h3>
+      		<div class = "supporting-info">
+        		Example = <a href="http://www.udacity.com/cs253s/hipmunle.png">http://www.udacity.com/cs253s/hipmunle.png</a>
+            <ul>
+              <li>http = the protocol</li>
+              <li><a href="http://www.udacity.com/cs253s/hipmunle.png">www.udacity.com</a> = the host</li>
+              <li>/cs253s/hipmunle.png = path to file</li>
+            </ul>
+      		</div>
+      	</div>
+      	<div class = "concept">
+       		<h3>Query Parameter (GET parameters)</h3>
+       		<div class = "supporting-info">
+	        	Example = <a href="http://example.com/foo?P=1&q=neat">http://example.com/foo?P=1&q=neat</a>
+            <ul>
+              <li>Name = value: which is everything after the question mark</li>
+            </ul>
+	      	</div>
+        </div>
+	      <div class = "concept">
+          <h3>Fragment: something separated by the URL by a # sign</h3>
+          <div class = "supporting-info">
+            Example = <a href="http://www.example.com/foo#fragment">http://www.example.com/foo#fragment</a>
+            <ul>
+              <li>it only exists in the browser and is not sent to the server.</li>
+            </ul>
+          </div>			
+      	</div>
+        <div class = "concept">
+          <h3>Port: the # after the colon. It follows the colon</h3>
+          <div class = "supporting-info">
+            Example = <a href="http://localhost:8000/">http://localhost:8000/</a>
+            <ul>
+              <li>default port is 80</li>
+            </ul>
+          </div>      
+        </div>
+        <div class = "concept">
+          <h3>Headers format = Name: value</h3>
+          <div class = "supporting-info">
+            Example = GET /foo?p=1 HTTP/1.1
+            <ul>
+              <li>Host: <a href="www.example.com">www.example.com</a></li>
+              <li>User - Agent: chrome v17</li>
+            </ul>
+          </div>      
+        </div>
+        <div class = "concept">
+          <h3>HTTP Responses</h3>
+          <div class = "supporting-info">
+            Example = HTTP/1.1 200 ok
+            <ul>
+              <li>HTTP/1.1 = status line</li>
+              <li>List of codes</li>
+                <ul>
+                  <li>200 = status code</li>
+                  <li>302 = Found</li>
+                  <li>404 = Not Found</li>
+                  <li>500 = Server Error</li>
+                </ul>
+              <li>ok = reason phrase</li>
+              <li>HTTP Response Header Examples</li>
+                <ul>
+                  <li>Date: Tue Mar 2012 04:33:33 GMT</li>
+                  <li>Server: Apache /2.2.3</li>
+                  <li>Conent-Type: text/html;</li>
+                  <li>Content-Length:1539</li>
+                </ul>
+            </ul>
+          </div>      
+        </div>
+        <div class = "concept">
+          <h3>Servers</h3>
+          <div class = "supporting-info">
+            <ul>
+              <li>purpose: respond to HTTP requests</li>
+              <li>response types: static and dynamic</li>
+                <ul>
+                  <li>static = pre-written file, images (most pages in the early days of the web)</li>
+                  <li>dynamic = made on the fly (most pages are like this today) by web application</li>
+                </ul>
+            </ul>
+          </div>      
+        </div>
+  		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class = "lesson">
+	<h2>4.6 Validation</h2>
+	<div class = "concept">
+    <h3>Steps for Validation</h3>
+    <div class = "supporting-info">
+      <ol>
+        <li>Verify the user's input</li>
+        <li>on error, render form again</li>
+        <li>include error message</li>
+      </ol>
+    </div>
+  </div>
+  <div class = "concept">
+    <h3>String Substitution</h3>
+    <div class = "suporting-info">
+      This is the old way to my bold text
+      <div class = "more-supporting-info">
+        <pre>
+  <code>&lt;b&gt;some bold text&lt;/b&gt;</code>
+        </pre>
+      </div>
+    </div>
+    <div class = "supporting-info">
+      This is the new way using string substitution
+      <div class = "more-supporting-info">
+        <pre>
+<code>a = "some bold text"</code>
+<code>&lt;b&gt;%s&lt;/b&gt; % a</code>
+        </pre>
+      </div>
+    </div>
+    <div class = "supporting-info">
+      This would output --&gt; <b>some bold text</b>
+      <ul>
+        <li>this is the string substitution method</li>
+        <li>we can use this for all kinds of strings...not just one.</li>
+      </ul>
+      <div class = "more-supporting-info">
+        <pre>
+<code>text % (NAME)s text" % {"NAME": value}</code>
+        </pre>
+      </div>
+    </div>
+  </div>
+  <div class = "concept">
+    <h3>Input Values</h3>
+    <div class = "supporting-info">
+      The underlined part below is the default value.
+      <div class = "more-supporting-info">
+        <pre>
+<code>&lt;input type = "text" <u>value="cool"</u>&gt;</code>
+        </pre>
+      </div>
+    </div>
+  </div>
+  <div class = "concept">
+    <h3>Escaping</h3>
+    <div class = "more-supporting-info">
+  <xmp>" --> &quot;</xmp>
+  <xmp>> --> &gt;</xmp>
+  <xmp>< --> &lt;</xmp>
+  <xmp>& --> &amp;</xmp>
+    </div>
+  </div>
+  <div class = "concept">
+    <h3>Redirection</h3>
+    <img src="/pictures/Redirection1.png" alt="redirection1">
+    <br></br>
+    Instead of using a Success HTML submit a Redirect, followed by a GET success and Success HTML.
+    <br></br>
+    <img src="/pictures/Redirection2.png" alt="redirection2">
+    <br></br>
+    This helps us to avoid reloading the submit page and it just resubmits it again. It also helps so we can have distinct pages for forms and success pages.
+  </div>
+</div>
+
+{% endblock %}

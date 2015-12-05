@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class = "lesson">
+		<h2>4.4 Python Break-Modulus and Dictionaries</h2>
+		<div class = "concept">
+      <h3>Modulus Operator = %</h3>
+      <div class = "supporting-info">
+        <ul>
+          <li>Format = &lt;number&gt; % &lt;modulus&gt; gives us the &lt;remainder&gt;</li>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>String vs. List vs. Dictonary</h3>
+      <div class = "supporting-info">
+        String
+        <ul>
+          <li>'hello'</li>
+          <li>this is a sequence of chracters</li>
+          <li>it is immutable</li>
+            <ul>
+              <li>s[i]<sup>th</sup> character is 's'</li>
+            </ul>
+          </ul>
+      </div>
+      <div class = "supporting-info">
+        List
+        <ul>
+          <li>[‘alpha’, 23]</li>
+          <li>this is a list of elements</li>
+          <li>it is mutable</li>
+            <ul>
+              <li>p[i]<sup>th</sup></li>
+              <ul>
+                <li>i<sup>th</sup> element of p</li>
+              </ul>
+              <li>p[i]<sup>th</sup> = u</li>
+              <ul>
+                <li>replace value of i<sup>th</sup> element with u.</li>
+              </ul>
+            </ul>
+        </ul>
+      </div>
+      <div class = "supporting-info">
+        Dictionary
+        <ul>
+          <li>{‘hydrogen’: 1, ‘helium’: 2}</li>
+          <li>this is a set of &lt;key, value&gt; pairs</li>
+          <li>pairs are mutable</li>
+            <ul>
+              <li>d[k]</li>
+              <ul>
+                <li>k is the key value associated with k in d.</li>
+              </ul>
+              <li>d[k] = v</li>
+              <ul>
+                <li>update k with v.</li>
+              </ul>
+            </ul>
+        </ul>
+      </div>
+    </div>
+	</div>
+</div>
+
+{% endblock %}

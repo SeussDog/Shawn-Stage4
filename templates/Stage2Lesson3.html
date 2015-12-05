@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class = "lesson">
+    <h2>Stage 2.3: Input -> Function -> Output</h2>
+    <div class = "concept">
+      <h3>How do functions take input and produce output and what role do the keywords def and return have to do with this process?</h3>
+      <div class = "supporting-info">
+        <ul>
+          <li>it appears to me "def" defines the input or how to process the input
+          <li>return produces an output
+        </ul>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>How to use a Procedure</h3>
+      <div class = "supporting-info">
+        <ul>
+          <li>Inputs can be called operands or arguements.
+          <li>&lt;procedure&gt; (&lt;input&gt;, &lt;input&gt;, ...) is an example of how procedures are formatted.
+          <li>The following are examples:
+        </ul>
+        <div class = "more-supporting-info">
+          <pre> 
+            find ('au', 3)
+            def rest_of_string (s):
+              return s[1:]
+            print rest_of_string ('audacity')
+          
+            udacity</pre>
+        </div>
+        <ul>
+          <li>Returns tell the defined procedure what to do with the inputs.  Essentially it produces the output.
+        </ul>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3> Types of Data to Input into a Function</h3>
+      <div class = "supporting-info">
+        <ul>
+          <li>When we use parentheses in a function there is no quotes "".  That is because we are defining the function.
+          <li>When we use parentheses when using a function (like the print command) we use quotes "" to define the input.
+        </ul>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Making vs. Using Functions</h3>
+      <div class = "supporting-info">
+        <ul>
+          <li>When we make a function we are only telling it what it should do with the parameters it will receive when they are called.  The parameter is just a placeholder.
+          <li>When we use the function the real input values are placed into the where the parameter is inside the function.
+          <li>In the procedure listed above, the string <code>‘audacity’</code> was the real value and <code>s</code> was the parameter.
+        </ul>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Avoid Repetition</h3>
+      <div class = "supporting-info">
+        Functions help us to define a procedure that will work for multiple inputs therefore saving us lots of time for things that need the same formatting or conditions.
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class = "lesson">
+		<h2>4.2 Forms</h2>
+		<div class = "concept">
+      		<h3>Definition</h3>
+      		<div class = "supporting-info">
+        		Forms are what users use to enter text, select from dropdown menus, check checkboxes, etc...
+      		</div>
+      	</div>
+      	<div class = "concept">
+       		<h3>HTML Forms</h3>
+          <div class = "supporting-info">
+            <div class = "more-supporting-info">
+          	  <pre>
+  <code>&lt;form&gt;</code>
+      <code>&lt;input name = “name”&gt; &lt;— example = &lt;input name = “q”&gt;</code>
+  <code>&lt;/form&gt;</code>
+              </pre>
+  	      	</div
+          </div>
+          <div class = "supporting-info">
+            The following gives us a 'submit' button. This is not different than just hitting &lt;enter&gt; on the keyboard
+            <div class = "more-supporting-info">
+              <pre>
+  <code>&lt;input type = “submit”&gt;</code>
+              </pre>
+            </div>
+          </div>
+          <div class = "supporting-info">
+            The following will open whatever URL we specify and pass our input to it.
+            <div class = "more-supporting-info">
+              <pre>
+  <code>&lt;form action = “/foo”&gt;</code>
+              </pre>
+            </div>
+          </div>
+          <div class = "supporting-info">
+            The following shows the text as dots to protect the data entry, though the values do get passed to the URL and can be viewed.
+            <div class = "more-supporting-info">
+              <pre>
+  <code>&lt;input type=“password”&gt;</code>
+              </pre>
+            </div>
+          </div>
+          <div class = "supporting-info">
+            The following shows a checkbox. The URL shows either "on" or it doesn't appear at all in the URL.
+            <div class = "more-supporting-info">
+              <pre>
+  <code>&lt;input type="checkbox"&gt;</code>
+              </pre>
+            </div>
+          </div>
+          <div class = "supporting-info">
+            The following acts just like a checkbox except you can't uncheck them, unless you give each radio button the same name. Then you are only allowed to select one at any given time.
+            <div class = "more-supporting-info">
+              <pre>
+  <code>&lt;input type="radio"&gt;</code>
+              </pre>
+            </div>
+          </div>
+          <div class = "supporting-info">
+            The following allows us to give the radio button a value that gets sent to the server.
+            <div class = "more-supporting-info">
+              <pre>
+  <code>&lt;input type="radio" name=q value="one"&gt;</code>
+              </pre>
+            </div>
+          </div>
+          <div class = "supporting-info">
+            The following allows us to name the radio button.
+            <div class = "more-supporting-info">
+              <pre>
+  <code>&lt;label&gt;</code>
+              </pre>
+            </div>
+          </div>
+          <div class = "supporting-info">
+            The following allows us to create a dropdown box with these 3 values.  When we add "value" to option...that value is what gets passed to the URL.
+            <div class = "more-supporting-info">
+              <pre>
+  <code>&lt;select name=q&gt;</code>
+      <code>&lt;option value=“1"&gt;one&lt;/option&gt;</code>
+      <code>&lt;option&gt;two&lt;/option&gt;</code>
+      <code>&lt;option&gt;three&lt;/option&gt;</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+  		</div>
+	</div>
+
+{% endblock %}

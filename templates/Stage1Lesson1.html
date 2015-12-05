@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class = "lesson">
+		<h2>Stage 1: Lesson 1: Basics to Web and HTML</h2>
+		<div class = "concept">
+      		<h3>The Web</h3>
+      		<div class = "supporting-info">
+        		The web is a collection of HTML documents. Hyperlinks connect all the HTML documents together creating a web like structure. There are about 30 billion web pages.
+      		</div>
+      	</div>
+      	<div class = "concept">
+       		<h3>HTML</h3>
+       		<div class = "supporting-info">
+	        	This stands for Hyper Text Markup Language. HTML is made up of text, markup, references to other documens (for example pictures and videos) and links to other pages.
+	      	</div>
+        </div>
+	      <div class = "concept">
+          <h3>Markup</h3>
+          <div class = "supporting-info">
+            The following are examples of different types of markup:
+              <ul>
+                <li><em>Tags</em> = composed of the name of the element, surrounded by angle brackets. An end tag also has a slash after the opening angle bracket, to distinguish it from the start tag.</li>
+                <li><em>Elements</em> = The contents that sits between tags.</li>
+                <li><em>Attributes</em> = are used inside some tags like the Anchor tag &lt;a&gt;. the attribute in this case is an href. Example =  &lt;a href = "www.reddit.com"&gt; derp   &lt;/a&gt;</li>
+                <li><em>Images</em> = image files. For example   &lt;img&gt; or   &lt;img src = "url" alt = "txt"&gt; (This is for broken link messages)</li>
+                <li><em>Line Breaks</em> = these are carriage returns. For Example   &lt;br&gt; (line break) or   &lt;p&gt; (paragraph)</li>
+                <li><em>Inline vs Block</em> = These are the two types of breaks.  &lt;br&gt; is inline and   &lt;p&gt; is block.  Inlines are just lines of text whereas blocks, create a block of extra pixel space around the line.</li>
+              </ul>
+          </div>			
+      	</div>
+  		</div>
+	</div>
+
+{% endblock %}

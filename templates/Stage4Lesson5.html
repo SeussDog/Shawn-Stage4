@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class = "lesson">
+		<h2>4.5 Working with App Engine</h2>
+		<div class = "concept">
+      <h3>Differences between Get vs. Post</h3>
+      <div class = "supporting-info">
+        Get
+        <ul>
+          <li>parameters in URL</li>
+          <li>used for fetching documents</li>
+          <li>maximum URL length</li>
+          <li>ok to cache</li>
+          <li>shouldn't change the server</li>
+        </ul>
+        Post
+        <ul>
+          <li>parameters in body</li>
+          <li>used for updating data</li>
+          <li>no maximum length</li>
+          <li>not ok to cache</li>
+          <li>ok to change the server</li>
+        </ul>
+      </div>
+    </div>
+	</div>
+</div>
+
+{% endblock %}

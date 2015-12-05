@@ -1,0 +1,61 @@
+.indent {
+  text-indent : 85px;
+  }
+
+h1 {
+  text-align : center;
+  color : #0574ac;
+  }
+
+h2 {
+  text-indent: 10px;
+  }
+
+.lesson {
+  background-color: #ef6f00;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  margin: 10px auto;
+  }
+
+.concept {
+   background-color: #0574ac;
+   padding: 4px;
+   margin: 10px;
+   border-radius: 10px;
+   color: white;
+  }
+
+.more-supporting-info {
+  background-color: white;
+  color: black;
+  margin: 15px auto;
+  text-indent: 5px;
+  border-radius: 10px;
+}
+
+.examples {
+  text-indent: 85px;
+
+}
+
+.example2 {
+  text-indent: 115px;
+
+}
+
+.example3 {
+  text-indent: 145px;
+
+}
+
+.example4 {
+  text-indent: 175px;
+
+}
+
+.example5 {
+  text-indent: 205px;
+
+}

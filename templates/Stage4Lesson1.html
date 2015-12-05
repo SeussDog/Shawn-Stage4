@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class = "lesson">
+		<h2>4.1 Introduction to Networks</h2>
+		<div class = "concept">
+      <h3>Definition</h3>
+      <div class = "supporting-info">
+        A network is a group of entities that can communicate, even though they are not all directly connected.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Flooding</h3>
+      <div class = "supporting-info">
+	      Flooding the network is where all nodes get the same message.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>We need the following for a Network:</h3>
+      <div class = "supporting-info">
+        <ol>
+            <li>ways to encode and interpret messages</li>
+            <ul>
+              <li>Internet: message —> bits —> electrons/photons</li>
+            </ul>
+            <li>route messages</li>
+            <ul>
+              <li>Internet: routers figure out next hops</li>
+            </ul>
+            <li>rules for deciding who gets to use resources</li>
+            <ul>
+              <li>Internet: best effort service</li>
+            </ul>
+          </ol>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3> Measuring Networks:</h3>
+      <div class = "supporting-info">
+        <ol>
+          <li>Latency</li>
+          <ul>
+            <li>The time it takes messages to get from source to destination: Unit of time such as milliseconds</li>
+          </ul>
+          <li>Bandwidth</li>
+          <ul>
+            <li>amount of information that can be transmitted per unit of time: Units bits per second such as Megabit per second.</li>
+          </ul>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3> Bits</h3>
+      <div class = "supporting-info">
+        Bit is one unit of information in the form of a 0 or 1, like a yes/no question.
+      </div>
+    </div>
+    <div class = "concept">
+      <h3> Protocols</h3>
+      <div class = "supporting-info">
+        <ol>
+          <li>A method for communicating between a client and a server</li>
+          <li>Hypertext Transfer Protocol (HTTP)</li>
+          <ul>
+            <li>Example: client sends a ‘get' message to the server, finds file and sends it back to the client.</li>
+        </ol>
+	    </div>
+    </div>
+	</div>
+</div>
+
+{% endblock %}

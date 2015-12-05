@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class = "lesson">
+	<h2>4.7 HTML Templates</h2>
+	<div class = "concept">
+    <h3>Definition</h3>
+    A template library is a library to build complicated strings (html).  The following are resources for building HTML templates.
+    <ul>
+      <li>jinja2 (built into Google App Engine)</li>
+      <li><a href="http://jinja.pocoo.org">jinja.pocoo.org</a></li>
+    </ul>
+  </div>
+  <div class = "concept">
+    <h3>Variable Substitution</h3>
+    <div class = "supporting-info">
+      The following means print in Jinja:
+      <div class = "more-supporting-info">
+        {% raw %}
+        <pre>
+<code>{{ </code>
+        </pre>
+        {% endraw %}
+      </div>
+      The following is a Jinja variable:
+      <div class = "more-supporting-info">
+        {% raw %}
+        <pre>
+<code>{{ variable }}</code>
+        </pre>
+        {% endraw %}
+      </div>
+    </div>
+  </div>
+  <div class = "concept">
+    <h3>Statement Syntax</h3>
+    <div class = "supporting-info">
+      <div class = "more-supporting-info">
+        {% raw %}
+        <pre>
+<code>{% statement %} </code>
+  output
+<code>{% end statement %}</code>
+        </pre>
+        {% endraw %}
+      </div>
+    The following is an example:
+      <div class = "more-supporting-info">
+        {% raw %}
+        <pre>
+<code>{% if name == “Shawn” %}</code>
+  Hello, Shawn!
+<code>{% else %}</code>
+  who are you?
+<code>{% end if %}</code>
+        </pre>
+        {% endraw %}
+      </div>
+    </div>
+  </div>
+  <div class = "concept">
+    <h3>For Loop Syntax</h3>
+    <div class = "supporting-info">
+      <div class = "more-supporting-info">
+        {% raw %}
+        <pre>
+<code>{% for statement %} </code>
+body
+<code>{% endfor %}</code>
+        </pre>
+    {% endraw %}
+      </div>
+	  </div>
+  </div>
+  <div class = "concept">
+    <h3>Helpful Tips</h3>
+    <div class = "supporting-info">
+      <ul>
+        <li>Always automatically escape variables when possible</li>
+        <li>Minimize code in templates</li>
+        <li>Minimize code in coe</li>
+      </ul>
+    </div>
+  </div>
+  <div class = "concept">
+    <h3>Template Inheritance</h3>
+    <p>You don't want to write the same header and footer for each page.</p>
+    For Example:
+    <p>base.html (the folowing inherit this template)</p>
+    <ul>
+      <li>shopping-list.html</li>
+      <li>fizzbuzz.html</li>
+    </ul>
+  </div>
+  <div class = "concept">
+    <h3>Benefits of Templates</h3>  
+    <div class = "supporting-info">
+      <ul>
+        <li>seperate different types of code</li>
+        <li>make more readable code</li>
+        <li>more secure websites</li>
+        <li>html that is easier to modify</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

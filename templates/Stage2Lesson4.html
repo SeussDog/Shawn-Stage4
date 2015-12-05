@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class = "lesson">
+    <h2>Stage 2.4: Control Flow and Loop: If and While</h2>
+    <div class = "concept">
+      <h3>Making Decisions</h3>
+      <div class = "supporting-info">
+        The following is an example:
+        <div class = "more-supporting-info">
+          <p class = "examples">operators like &lt;, &gt;, &lt;=</p>
+          <p class = "examples">!= means "does not equal"</p>
+          <p class = "examples">&lt;number&gt; &lt;operator&gt; &lt;number&gt;</p>
+          <p class = "examples">Boolean values: True False</p>
+          <p class = "examples">print 2 &lt; 3</p>
+          <p class = "examples">True</p>
+          <p class = "examples">print 21 &lt; 3</p>
+          <p class = "examples">False</p>
+          <p class = "examples">== double equal means equal, b/c single equal means assignment</p>
+          <p class = "examples">An example of assignment is i = 21
+          <p class = "examples">if  &lt;test expression&gt;:</p>
+          <p class = "example2">&lt;output block&gt;</p>
+          <p class = "examples">else:</p>
+          <p class = "example2">&lt;output block&gt;</p>
+          <p class = "examples">&lt;expression&gt; or &lt;expression&gt; - If the first expression evaluates to True, the value is True and the second expression is not evaluated. If the first expression evaluates to false, the value is the value of the second expression.</p>
+        </div>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Loops</h3>
+      <div class = "supporting-info">
+        The following is an example:
+        <div class = "more-supporting-info">
+          <pre><code>while &lt;Test Expression&gt;:
+    &lt;block&gt;</code></pre>
+      </div>
+        If true go to block then go back to test expression.  As long as the test expression is true we continue to loop.
+        <div class = "more-supporting-info">
+          <pre><code>
+  i = 0
+  while i &lt; 10
+    print i
+    i = i + 1
+          </code></pre>
+        </div>
+      </div>
+    </div>
+    <div class = "concept">
+      <h3>Breaks</h3>
+      <div class = "supporting-info">
+        The following is an example:
+        <div class = "more-supporting-info">
+          <pre><code>
+  while &lt;TestExpression&gt;:
+    &lt;code&gt;
+    if &lt;BreakTest&gt;:
+      break
+    &lt;More Code&gt;
+
+  def print_nubmers(n):
+    i = 1
+    while i &lt;= n:
+      print i
+      i = i + 1
+  
+    i = 1
+    while True:
+      if i &gt; n:
+        break
+      print i
+      i = i + 1
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="lesson">
+	<h2>Comments</h2>
+  <form action="/sign?{{ sqp }}" method="post">
+    <div><textarea name="content" rows="3" cols="60"></textarea></div>
+    <div><input type="submit" value="Post Comment"></div>
+
+{% if error %}
+    <div style="color: red">{{ notification }}</div>
+{% endif %}
+
+  </form>
+    <hr>
+  <form>Wall:
+      <input value="{{ wallname }}" name="wall_name">
+      <input type="submit" value="Switch">
+  </form>
+    <br>
+  Logged in as: <strong>{{ username }}</strong><br>
+  <a href="{{ url }}">{{ urllinktext }}</a>
+</div>
+
+  <!-- user comments start here -->
+  {{ postshtml |safe }}
+
+
+
+
+
+{% endblock %}
