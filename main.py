@@ -242,7 +242,7 @@ class PostWall(webapp2.RequestHandler):
     if user is None or content is None:
         error = "'User' and 'Comment' can not be empty!"
         # With this approach, you can use the notification variable in your template for either instance
-        self.rend("comments.html", notification=error, sqp=sign_query_params, wallname=cgi.escape(wall_name), 
+        self.render("comments.html", notification=error, sqp=sign_query_params, wallname=cgi.escape(wall_name), 
                                     username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)
     else:
         success = "Your comment has been added"
