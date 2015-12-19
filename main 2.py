@@ -192,26 +192,22 @@ class CommentsHandler(Handler):
     sign_query_params = urllib.urlencode({'wall_name': wall_name})
 
     # Write Out Page here
-    self.render("comments.html", page_name="comments",  sqp=sign_query_params, wallname=cgi.escape(wall_name), 
-                                    username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)  
+    # self.render("comments.html", page_name="comments",  sqp=sign_query_params, wallname=cgi.escape(wall_name), 
+    #                                 username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)  
 
     # The following is the error handling for empty author or content fields, followed by the output.
-    # user = Post.author
-    # content = Post.content
-    # if user is None or content is None:
-    #     error = "'User' and 'Comment' can not be empty!"
-    #     # With this approach, you can use the notification variable in your template for either instance
-    #     self.render("comments.html", notification=error, sqp=sign_query_params, wallname=cgi.escape(wall_name), 
-    #                                 username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)
-    # else:
-    #     success = "Your comment has been added"
-    #     self.render("comments.html", notification=success, sqp=sign_query_params, wallname=cgi.escape(wall_name), 
-    #                                 username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)
-
-def invalid_comment(comment):
-    if comment == "":
-        return comment
-
+    user = Post.author
+    content = Post.content
+    if user is None or content is None:
+        error = "'User' and 'Comment' can not be empty!"
+        # With this approach, you can use the notification variable in your template for either instance
+        self.render("comments.html", notification=error, sqp=sign_query_params, wallname=cgi.escape(wall_name), 
+                                    username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)
+    else:
+        success = "Your comment has been added"
+        self.render("comments.html", notification=success, sqp=sign_query_params, wallname=cgi.escape(wall_name), 
+                                    username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)
+   
 class PostWall(webapp2.RequestHandler):
   def post(self):
     # We set the same parent key on the 'Post' to ensure each
@@ -234,30 +230,23 @@ class PostWall(webapp2.RequestHandler):
             name='anonymous@anonymous.com',
             email='anonymous@anonymous.com')
 
+
     # Get the content from our request parameters, in this case, the message
     # is in the parameter 'content'
     post.content = self.request.get('content')
 
-    # Check if the current signed in user matches with the author's identity from this particular
-    # post. Newline character '\n' tells the computer to print a newline when the browser is
-    # is rendering our HTML
-    user = post.author
-    content = post.content
-    error = self.request.get('error_message', "'Comment' can not be empty!")
-
-    if content is invalid_comment(content):
-        error = error
-        # With this approach, you can use the notification variable in your template for either instance
-        self.redirect('/comments.html?error=' + error)
-    else:
-    #     success = "Your comment has been added"
-        self.redirect('/comments.html?wall_name=' + wall_name)
-        # self.render("comments.html", notification=success, sqp=sign_query_params, wallname=cgi.escape(wall_name), 
-        #                             username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)
-
     # Write to the Google Database
     post.put()
 
+    # Do other things here such as a page redirect
+   
+    #content = post.content
+    # if post.content == "":
+        #I'm not entirely sure what to type here. Everything I've tried has errored
+    #     CommentsHandler.render("comments.html", error=error)
+    # else:
+    #     
+    self.redirect('/comments.html?wall_name=' + wall_name)
 
 
 
