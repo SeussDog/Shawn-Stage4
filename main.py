@@ -192,63 +192,67 @@ class CommentsHandler(Handler):
     sign_query_params = urllib.urlencode({'wall_name': wall_name})
 
     # Write Out Page here
-    # self.render("comments.html", page_name="comments",  sqp=sign_query_params, wallname=cgi.escape(wall_name), 
-    #                                 username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)  
+    self.render("comments.html", page_name="comments",  sqp=sign_query_params, wallname=cgi.escape(wall_name), 
+                                    username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)  
 
-    # The following is the error handling for empty author or content fields, followed by the output.
-    user = Post.author
-    content = Post.content
-    if user is None or content is None:
-        error = "'User' and 'Comment' can not be empty!"
-        # With this approach, you can use the notification variable in your template for either instance
-        self.render("comments.html", notification=error, sqp=sign_query_params, wallname=cgi.escape(wall_name), 
-                                    username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)
-    else:
-        success = "Your comment has been added"
-        self.render("comments.html", notification=success, sqp=sign_query_params, wallname=cgi.escape(wall_name), 
-                                    username=user_name, url=url, urllinktext=url_linktext, postshtml=posts_html)
-   
+    # The following will be used to define my empty comment field so an error can be generated in my Postwall 
+    # class below.
+def invalid_comment(comment):
+    if comment == "":
+        return comment
+
 class PostWall(webapp2.RequestHandler):
-  def post(self):
-    # We set the same parent key on the 'Post' to ensure each
-    # Post is in the same entity group. Queries across the
-    # single entity group will be consistent. However, the write
-    # rate to a single entity group should be limited to
-    # ~1/second.
-    wall_name = self.request.get('wall_name',DEFAULT_WALL)
-    post = Post(parent=wall_key(wall_name))
+    # the write, render_str and render definitions are needed so I can render the comments error html page.
+    def write(self, *a, **kw):
+        self.response.out.write(*a, **kw)
 
-    # When the person is making the post, check to see whether the person
-    # is logged into Google
-    if users.get_current_user():
-      post.author = Author(
-            identity=users.get_current_user().user_id(),
-            name=users.get_current_user().nickname(),
-            email=users.get_current_user().email())
-    else:
-      post.author = Author(
-            name='anonymous@anonymous.com',
-            email='anonymous@anonymous.com')
+    def render_str(self, template, **params):
+        t = jinja_env.get_template(template)
+        return t.render(params)
 
+    def render(self, template, **kw):
+        self.write(self.render_str(template, **kw))
 
-    # Get the content from our request parameters, in this case, the message
-    # is in the parameter 'content'
-    post.content = self.request.get('content')
+    def post(self):
+        # We set the same parent key on the 'Post' to ensure each
+        # Post is in the same entity group. Queries across the
+        # single entity group will be consistent. However, the write
+        # rate to a single entity group should be limited to
+        # ~1/second.
+        wall_name = self.request.get('wall_name',DEFAULT_WALL)
+        post = Post(parent=wall_key(wall_name))
 
-    # Write to the Google Database
-    post.put()
+        # When the person is making the post, check to see whether the person
+        # is logged into Google
+        if users.get_current_user():
+          post.author = Author(
+                identity=users.get_current_user().user_id(),
+                name=users.get_current_user().nickname(),
+                email=users.get_current_user().email())
+        else:
+          post.author = Author(
+                name='anonymous@anonymous.com',
+                email='anonymous@anonymous.com')
 
-    # Do other things here such as a page redirect
-   
-    #content = post.content
-    # if post.content == "":
-        #I'm not entirely sure what to type here. Everything I've tried has errored
-    #     CommentsHandler.render("comments.html", error=error)
-    # else:
-    #     
-    self.redirect('/comments.html?wall_name=' + wall_name)
+        # Get the content from our request parameters, in this case, the message
+        # is in the parameter 'content'
+        post.content = self.request.get('content')
 
+        # Check if the current signed in user matches with the author's identity from this particular
+        # post. Newline character '\n' tells the computer to print a newline when the browser is
+        # is rendering our HTML
+        user = post.author
+        content = post.content
 
+        if content is invalid_comment(content):
+            error = "***You must enter text in the Comments field before Posting the Comment.***"
+            # With this approach, you can use the error variable in the comments template
+            self.render("comments.html", error=error, wallname=cgi.escape(wall_name))
+
+        else:
+            self.redirect('/comments.html?wall_name=' + wall_name)
+            # Write to the Google Database
+            post.put()
 
 
 app = webapp2.WSGIApplication([("/", MainPage),
